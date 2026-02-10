@@ -17,7 +17,7 @@ This machine runs:
 - **Processor**: AMD A6-6310 APU  
 - **CPU Cores**: 4  
 - **Logical Threads**: 4  
-- **Memory (RAM)**: Limited system memory  
+- **Memory (RAM)**: 4 GB  
 - **GPU**: AMD Radeon R4/R5 Graphics (integrated)
 
 ### Notes

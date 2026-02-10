@@ -13,7 +13,7 @@ The system is deployed as multiple independent components:
 - Application server
 - Database
 - AI inference server
-- External exposure layer (tunneling)
+- External exposure layer (Cloudflare Tunnel)
 
 Each component operates independently and can be restarted without affecting data correctness.
 
@@ -64,13 +64,23 @@ This behavior is expected in the current design.
 
 ## Tunneling and Exposure
 
-When the system is exposed externally via a tunneling layer:
+External access is provided using **Cloudflare Tunnel (cloudflared)** with a fixed custom domain.
 
-- Long-lived connections may stall without explicit errors
+Characteristics of the exposure model:
+
+- No public IP exposure
+- No inbound firewall ports opened
+- All traffic flows through an outbound-only encrypted tunnel
+- TLS termination handled by Cloudflare
+- Stable DNS-based access (not ephemeral URLs)
+
+Due to the nature of long-running requests:
+
+- Long-lived HTTP connections may stall without explicit errors
 - Tunnel processes may retain stale connection state
 - Requests may appear to hang without reaching the AI server
 
-These issues are related to tunnel behavior rather than application logic.
+These issues are related to tunnel and connection handling rather than application logic.
 
 ---
 
@@ -92,9 +102,9 @@ If analysis or connectivity issues occur, recovery is performed by restarting co
 
 1. Restart the application server
 2. Restart the AI inference server
-3. Restart the tunneling process
+3. Restart the Cloudflare Tunnel process
 
-This clears stale connections and restores normal request flow.
+This clears stale tunnel connections and restores normal request flow.
 
 ---
 

@@ -10,24 +10,48 @@ The Lead Submission Observability Lab is designed as an **observability-first ba
 - User creation, which is required for submitting leads
 - Dashboard access and AI analysis are available without user creation
 
+The system is exposed externally using a **secure tunneling-based access model** and does not rely on direct public network exposure.
+
 ---
 
 ## High-Level Architecture
 
 At a high level, the system consists of the following layers:
 
-1. **UI Layer**
-2. **Application Server**
-3. **AI Analysis Service**
-4. **Database Layer**
+1. **Edge / Exposure Layer (Cloudflare Tunnel)**
+2. **UI Layer**
+3. **Application Server**
+4. **AI Analysis Service**
+5. **Database Layer**
 
 ---
 
 ## Component Breakdown
 
-### 1. UI Layer
+### 1. Edge / Exposure Layer (Cloudflare Tunnel)
+
+This layer is responsible for secure external access.
 
 It provides:
+
+- TLS termination at the edge
+- DNS-based access via a fixed domain
+- Outbound-only encrypted connectivity to the application server
+- Protection against direct public IP exposure
+
+Key characteristics:
+
+- No inbound firewall ports
+- No public IP routing to the server
+- Traffic forwarded internally to the application server over localhost
+
+This layer is transport-focused and does not inspect or modify application logic.
+
+---
+
+### 2. UI Layer
+
+The UI layer provides:
 
 - Lead submission forms
 - Dashboard views showing aggregated metrics
@@ -39,9 +63,11 @@ It provides:
 
 The UI does not perform validation, aggregation, or AI logic.
 
+All UI traffic enters the system through the Cloudflare Tunnel.
+
 ---
 
-### 2. Application Server
+### 3. Application Server
 
 The application server handles all core system operations.
 
@@ -66,7 +92,7 @@ All AI calls originate from the application server.
 
 ---
 
-### 3. AI Analysis Service
+### 4. AI Analysis Service
 
 The AI analysis service runs as a separate process and is accessed over HTTP.
 
@@ -87,7 +113,7 @@ It operates only on the data explicitly provided in the prompt.
 
 ---
 
-### 4. Database Layer
+### 5. Database Layer
 
 The Database layer stores all system data.
 
@@ -96,7 +122,7 @@ This includes:
 - User records
 - Lead records
 - Lead submission attempt logs
-- Daily and Total lead data summary - Leads, Total Submission, Successful submission, success percentage 
+- Daily and total lead data summaries
 - AI-generated daily analysis reports
 
 Key characteristics:
@@ -114,21 +140,23 @@ All dashboards and AI analysis are derived from database data.
 
 ### Lead Submission Flow
 
-1. Lead data is submitted by UI
-2. Application server validates the request
-3. Submission attempt is recorded
-4. On success, lead data is stored along with attempt logs
-5. On failure, failure details are logged
+1. Lead data is submitted by the UI
+2. Request enters via Cloudflare Tunnel
+3. Application server validates the request
+4. Submission attempt is recorded
+5. On success, lead data is stored along with attempt logs
+6. On failure, failure details are logged
 
 ---
 
 ### Dashboard Metrics Flow
 
 1. UI requests dashboard metrics
-2. Application server queries stored data
-3. Metrics are computed
-4. Metrics are returned synchronously
-5. UI renders charts and counters
+2. Request enters via Cloudflare Tunnel
+3. Application server queries stored data
+4. Metrics are computed
+5. Metrics are returned synchronously
+6. UI renders charts and counters
 
 ---
 
@@ -138,7 +166,7 @@ All dashboards and AI analysis are derived from database data.
 2. Application server checks for existing analysis for the date
 3. If analysis exists and is immutable, it is returned
 4. Otherwise:
-   - Generated summarized data is assembled
+   - Summarized data is assembled
    - A bounded prompt is constructed
    - The AI service is called synchronously
    - The result is validated and persisted
@@ -149,9 +177,10 @@ All dashboards and AI analysis are derived from database data.
 ## Execution Model
 
 - AI analysis is executed synchronously
-- The triggering request remains open until completion. Coonection is timed out after 60 seconds if AI is taking longer top generate response
-- Execution time may range from several seconds to over a minute
-- Past-date analysis is reused when available fior past dates, current data analysis is generated everytime the API is called
+- The triggering request remains open until completion  
+- Connections may time out after ~60 seconds if AI execution exceeds limits
+- Past-date analysis is reused when available
+- Current-date analysis is generated on every request
 
 ---
 
@@ -159,7 +188,7 @@ All dashboards and AI analysis are derived from database data.
 
 The current architecture includes the following constraints:
 
-- AI inference can be slow (Due to System constrainst. you can check system information in system-info.md)
+- AI inference can be slow due to hardware limitations
 - Long-running HTTP requests are expected
 - Network tunnels may drop or stall long-lived connections
 - Restarting services clears in-flight requests

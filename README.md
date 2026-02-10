@@ -18,10 +18,25 @@ AI summaries are generated using **Ollama with the LLaMA 3.1 model (8B parameter
 
 Please use the link below to try the project or check the live dashboard:
 
-** https://francis-lion-bar-benchmark.trycloudflare.com**
-**Server currently down - change in progress - moving from dynamic url tunneling to fixed url tunnel**
+**https://apianalysis.harshjha.co.in**
 
-## Live Demo / Dashboard Access
+### Cloudflare Access & Exposure Model
+
+The application is exposed using **Cloudflare Tunnel (cloudflared)** with a **fixed custom domain**.
+
+Key characteristics of the setup:
+
+- No public IP exposure  
+- No inbound firewall ports opened  
+- No router or NAT configuration required  
+- All traffic flows through an **outbound-only encrypted tunnel**  
+- TLS termination handled by Cloudflare  
+
+This replaces earlier dynamic `trycloudflare.com` URLs and provides a **stable, production-style access pattern**.
+
+---
+
+## Live Demo / Dashboard Access Notes
 - For a quick check on database and AI Analysis Flow you can check pdf of flow in draw.io_files, and you can also use xml files to import the design in draw.io
 - For further information on system parts you can check part specific files in docs
 
@@ -37,7 +52,7 @@ If you need to access the project during the expected downtime window, or if you
 
 Do reach out if you want information on any part of the project.
 
-**Happy Coding! **
+**Happy Coding!**
 
 ---
 
@@ -98,11 +113,9 @@ The project is **stable, functional, and observable**.
 All core flows are validated:
 
 - Data capture  
-- Logging
+- Logging  
 - Summarization  
 - AI analysis  
 - Visualization  
 
 Future work focuses on **performance and stability**.
-
----
