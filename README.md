@@ -1,8 +1,8 @@
-# Lead-Submission-Observability-Lab
+# API-Analysis
 
 ## Overview
 
-**Lead Submission Observability Lab** simulates lead generation from multiple sources and endpoints and produces **AI-based daily summaries** derived from lead submission logs.
+**API Analysis** simulates lead generation from multiple sources and endpoints and produces **AI-based daily summaries** derived from lead submission logs.
 
 The system is built as an **submission behaviour backend project**, focusing on:
 
@@ -19,6 +19,7 @@ AI summaries are generated using **Ollama with the LLaMA 3.1 model (8B parameter
 Please use the link below to try the project or check the live dashboard:
 
 ** https://francis-lion-bar-benchmark.trycloudflare.com**
+**Server currently down - change in progress - moving from dynamic url tunneling to fixed url tunnel**
 
 ## Live Demo / Dashboard Access
 - For a quick check on database and AI Analysis Flow you can check pdf of flow in draw.io_files, and you can also use xml files to import the design in draw.io
