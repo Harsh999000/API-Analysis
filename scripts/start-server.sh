@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BASE_DIR="/web2/Lead-Submission-Observability-Lab"
+BASE_DIR="/web2/AI-Analysis"
 SCRIPT_DIR="$BASE_DIR/scripts"
 LOG_DIR="$SCRIPT_DIR/log"
 

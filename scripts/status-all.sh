@@ -3,7 +3,7 @@
 echo "============================================"
 echo "============================================"
 
-SCRIPT_DIR="/web2/Lead-Submission-Observability-Lab/scripts"
+SCRIPT_DIR="/web2/AI-Analysis/scripts"
 LOG_DIR="$SCRIPT_DIR/log"
 DATE=$(date +"%Y-%m-%d")
 LOG_FILE="$LOG_DIR/lead-lab-$DATE.log"

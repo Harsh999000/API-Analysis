@@ -513,7 +513,7 @@ Server started with PID 1126
 [[1;34mINFO[m] Nothing to compile - all classes are up to date
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.3.1:testResources[m [1m(default-testResources)[m @ [36mlead-submission-observability-lab[0;1m ---[m
-[[1;34mINFO[m] skip non existing resourceDirectory /web2/Lead-Submission-Observability-Lab/src/test/resources
+[[1;34mINFO[m] skip non existing resourceDirectory /web2/AI-Analysis/src/test/resources
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.11.0:testCompile[m [1m(default-testCompile)[m @ [36mlead-submission-observability-lab[0;1m ---[m
 [[1;34mINFO[m] No sources to compile
@@ -532,7 +532,7 @@ Server started with PID 1126
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.1)
 
-2026-01-29T19:07:42.451+05:30  INFO 1171 --- [lead-submission-lab] [           main] eadSubmissionObservabilityLabApplication : Starting LeadSubmissionObservabilityLabApplication using Java 17.0.18 with PID 1171 (/web2/Lead-Submission-Observability-Lab/target/classes started by harsh in /web2/Lead-Submission-Observability-Lab)
+2026-01-29T19:07:42.451+05:30  INFO 1171 --- [lead-submission-lab] [           main] eadSubmissionObservabilityLabApplication : Starting LeadSubmissionObservabilityLabApplication using Java 17.0.18 with PID 1171 (/web2/AI-Analysis/target/classes started by harsh in /web2/AI-Analysis)
 2026-01-29T19:07:42.460+05:30  INFO 1171 --- [lead-submission-lab] [           main] eadSubmissionObservabilityLabApplication : The following 1 profile is active: "local"
 2026-01-29T19:07:45.361+05:30  INFO 1171 --- [lead-submission-lab] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
 2026-01-29T19:07:45.521+05:30  INFO 1171 --- [lead-submission-lab] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 139 ms. Found 5 JPA repository interfaces.

@@ -4,7 +4,7 @@ APP_NAME="Lead-Submission-Observability-Lab"
 PROFILE="local"
 
 # Absolute path to project root
-PROJECT_DIR="/web2/Lead-Submission-Observability-Lab"
+PROJECT_DIR="/web2/AI-Analysis"
 
 echo "=============================="
 echo "Restarting $APP_NAME"
