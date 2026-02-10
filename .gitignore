@@ -18,3 +18,16 @@ src/main/resources/application-local.properties
 
 # VS Code workspace files
 *.code-workspace
+
+# Logs - local only
+logs/
+scripts/log/
+app.log
+
+# Build artifacts
+target/
+
+# OS / Editor noise
+.DS_Store
+.idea/
+.vscode/
