@@ -22,12 +22,7 @@ PID=$(cat "$PID_FILE")
 
 if ps -p "$PID" > /dev/null 2>&1; then
   echo "Cloudflare status: RUNNING (PID $PID)" | tee -a "$LOG_FILE"
-  CF_URL=$(grep -o 'https://[^ ]*trycloudflare.com' "$LOG_FILE" | tail -n 1)
-  if [ -n "$CF_URL" ]; then
-    echo "Public URL: $CF_URL" | tee -a "$LOG_FILE"
-  else
-    echo "Public URL: Not yet detected (check logs)" | tee -a "$LOG_FILE"
-  fi
+  echo "Public Domain: https://apianalysis.harshjha.co.in" | tee -a "$LOG_FILE"
 else
   echo "Cloudflare status: NOT RUNNING (stale PID file)" | tee -a "$LOG_FILE"
 fi
