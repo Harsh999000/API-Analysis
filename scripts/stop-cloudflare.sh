@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SCRIPT_DIR="/web2/AI-Analysis/scripts"
+SCRIPT_DIR="/web2/Api-Analysis/scripts"
 LOG_DIR="$SCRIPT_DIR/log"
 
 DATE=$(date +"%Y-%m-%d")

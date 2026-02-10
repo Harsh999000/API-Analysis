@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BASE_DIR="/web2/AI-Analysis"
+BASE_DIR="/web2/Api-Analysis"
 SCRIPT_DIR="$BASE_DIR/scripts"
 LOG_DIR="$SCRIPT_DIR/log"
 

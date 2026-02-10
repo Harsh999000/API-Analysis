@@ -32,7 +32,7 @@ Server started with PID 42428
 [[1;34mINFO[m] Nothing to compile - all classes are up to date
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.3.1:testResources[m [1m(default-testResources)[m @ [36mlead-submission-observability-lab[0;1m ---[m
-[[1;34mINFO[m] skip non existing resourceDirectory /web2/AI-Analysis/src/test/resources
+[[1;34mINFO[m] skip non existing resourceDirectory /web2/Api-Analysis/src/test/resources
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.11.0:testCompile[m [1m(default-testCompile)[m @ [36mlead-submission-observability-lab[0;1m ---[m
 [[1;34mINFO[m] No sources to compile
@@ -55,7 +55,7 @@ STATUS: RUNNING (PID 42428)
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.1)
 
-2026-01-27T05:32:58.468+05:30  INFO 42478 --- [lead-submission-lab] [           main] eadSubmissionObservabilityLabApplication : Starting LeadSubmissionObservabilityLabApplication using Java 17.0.18 with PID 42478 (/web2/AI-Analysis/target/classes started by harsh in /web2/AI-Analysis)
+2026-01-27T05:32:58.468+05:30  INFO 42478 --- [lead-submission-lab] [           main] eadSubmissionObservabilityLabApplication : Starting LeadSubmissionObservabilityLabApplication using Java 17.0.18 with PID 42478 (/web2/Api-Analysis/target/classes started by harsh in /web2/Api-Analysis)
 2026-01-27T05:32:58.475+05:30  INFO 42478 --- [lead-submission-lab] [           main] eadSubmissionObservabilityLabApplication : The following 1 profile is active: "local"
 2026-01-27T05:32:59.958+05:30  INFO 42478 --- [lead-submission-lab] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
 2026-01-27T05:33:00.101+05:30  INFO 42478 --- [lead-submission-lab] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 129 ms. Found 5 JPA repository interfaces.
@@ -137,7 +137,7 @@ Server started with PID 42698
 [[1;34mINFO[m] Compiling 57 source files with javac [debug release 17] to target/classes
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.3.1:testResources[m [1m(default-testResources)[m @ [36mlead-submission-observability-lab[0;1m ---[m
-[[1;34mINFO[m] skip non existing resourceDirectory /web2/AI-Analysis/src/test/resources
+[[1;34mINFO[m] skip non existing resourceDirectory /web2/Api-Analysis/src/test/resources
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.11.0:testCompile[m [1m(default-testCompile)[m @ [36mlead-submission-observability-lab[0;1m ---[m
 [[1;34mINFO[m] No sources to compile
@@ -156,7 +156,7 @@ Server started with PID 42698
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.1)
 
-2026-01-27T06:09:05.051+05:30  INFO 42745 --- [lead-submission-lab] [           main] eadSubmissionObservabilityLabApplication : Starting LeadSubmissionObservabilityLabApplication using Java 17.0.18 with PID 42745 (/web2/AI-Analysis/target/classes started by harsh in /web2/AI-Analysis)
+2026-01-27T06:09:05.051+05:30  INFO 42745 --- [lead-submission-lab] [           main] eadSubmissionObservabilityLabApplication : Starting LeadSubmissionObservabilityLabApplication using Java 17.0.18 with PID 42745 (/web2/Api-Analysis/target/classes started by harsh in /web2/Api-Analysis)
 2026-01-27T06:09:05.058+05:30  INFO 42745 --- [lead-submission-lab] [           main] eadSubmissionObservabilityLabApplication : The following 1 profile is active: "local"
 2026-01-27T06:09:06.552+05:30  INFO 42745 --- [lead-submission-lab] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
 2026-01-27T06:09:06.699+05:30  INFO 42745 --- [lead-submission-lab] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 133 ms. Found 5 JPA repository interfaces.
@@ -689,7 +689,7 @@ Server started with PID 43481
 [[1;34mINFO[m] Compiling 56 source files with javac [debug release 17] to target/classes
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.3.1:testResources[m [1m(default-testResources)[m @ [36mlead-submission-observability-lab[0;1m ---[m
-[[1;34mINFO[m] skip non existing resourceDirectory /web2/AI-Analysis/src/test/resources
+[[1;34mINFO[m] skip non existing resourceDirectory /web2/Api-Analysis/src/test/resources
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.11.0:testCompile[m [1m(default-testCompile)[m @ [36mlead-submission-observability-lab[0;1m ---[m
 [[1;34mINFO[m] No sources to compile
@@ -708,7 +708,7 @@ Server started with PID 43481
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.1)
 
-2026-01-27T06:34:12.846+05:30  INFO 43527 --- [lead-submission-lab] [           main] eadSubmissionObservabilityLabApplication : Starting LeadSubmissionObservabilityLabApplication using Java 17.0.18 with PID 43527 (/web2/AI-Analysis/target/classes started by harsh in /web2/AI-Analysis)
+2026-01-27T06:34:12.846+05:30  INFO 43527 --- [lead-submission-lab] [           main] eadSubmissionObservabilityLabApplication : Starting LeadSubmissionObservabilityLabApplication using Java 17.0.18 with PID 43527 (/web2/Api-Analysis/target/classes started by harsh in /web2/Api-Analysis)
 2026-01-27T06:34:12.853+05:30  INFO 43527 --- [lead-submission-lab] [           main] eadSubmissionObservabilityLabApplication : The following 1 profile is active: "local"
 2026-01-27T06:34:14.339+05:30  INFO 43527 --- [lead-submission-lab] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
 2026-01-27T06:34:14.480+05:30  INFO 43527 --- [lead-submission-lab] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 128 ms. Found 5 JPA repository interfaces.
@@ -2948,7 +2948,7 @@ Server started with PID 1091
 [[1;34mINFO[m] Nothing to compile - all classes are up to date
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.3.1:testResources[m [1m(default-testResources)[m @ [36mlead-submission-observability-lab[0;1m ---[m
-[[1;34mINFO[m] skip non existing resourceDirectory /web2/AI-Analysis/src/test/resources
+[[1;34mINFO[m] skip non existing resourceDirectory /web2/Api-Analysis/src/test/resources
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.11.0:testCompile[m [1m(default-testCompile)[m @ [36mlead-submission-observability-lab[0;1m ---[m
 [[1;34mINFO[m] No sources to compile
@@ -2967,7 +2967,7 @@ Server started with PID 1091
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.1)
 
-2026-01-27T17:14:36.619+05:30  INFO 1137 --- [lead-submission-lab] [           main] eadSubmissionObservabilityLabApplication : Starting LeadSubmissionObservabilityLabApplication using Java 17.0.18 with PID 1137 (/web2/AI-Analysis/target/classes started by harsh in /web2/AI-Analysis)
+2026-01-27T17:14:36.619+05:30  INFO 1137 --- [lead-submission-lab] [           main] eadSubmissionObservabilityLabApplication : Starting LeadSubmissionObservabilityLabApplication using Java 17.0.18 with PID 1137 (/web2/Api-Analysis/target/classes started by harsh in /web2/Api-Analysis)
 2026-01-27T17:14:36.627+05:30  INFO 1137 --- [lead-submission-lab] [           main] eadSubmissionObservabilityLabApplication : The following 1 profile is active: "local"
 2026-01-27T17:14:39.423+05:30  INFO 1137 --- [lead-submission-lab] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
 2026-01-27T17:14:39.600+05:30  INFO 1137 --- [lead-submission-lab] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 148 ms. Found 5 JPA repository interfaces.
