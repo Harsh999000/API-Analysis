@@ -1,0 +1,17 @@
+package com.leadsubmission.observability.repository;
+
+import com.leadsubmission.observability.entity.Lead;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import java.util.List;
+
+public interface LeadRepository extends JpaRepository<Lead, Long> {
+
+    @Query("""
+        SELECT l
+        FROM Lead l
+        ORDER BY l.createdAt DESC
+    """)
+    List<Lead> findAllOrderByCreatedAtDesc();
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Logs</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/logs.css">
+    <script src="/js/logs.js" defer></script>
+    <!-- Including this to track visit logs included in app.js-->
+    <script src="/js/app.js" defer></script>
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <header class="top-nav">
+        <div class="nav-left">
+            <a href="/index.html" class="project-title">
+                Lead Submission Analysis
+            </a>
+        </div>
+        <nav class="nav-right">
+            <a href="/index.html">Home</a>
+            <a href="/dashboard.html">Dashboard</a>
+            <a href="/logs.html">Logs</a>
+        </nav>
+    </header>
+
+    <main class="page-container">
+
+        <header class="logs-header">
+            <h1>Logs</h1>
+            <p class="subtitle">
+                Please visit dashboard page to check AI based summary derived from lead submission logs<br>
+                Using Ollama with the LLaMA 3.1 model — specifically the 8B parameter variant.<br><br>
+                Last 20 data shown in the tables below. Export CSV to export all the data                
+            </p>
+        </header>
+
+        <!-- USERS LOG -->
+        <section class="card log-section">
+            <div class="log-header">
+                <div>
+                    <h2>Users</h2>
+                    <p class="subtitle">Last 20 registered users (latest first)</p>
+                </div>
+                <button class="export-btn">Export CSV</button>
+            </div>
+
+            <div class="log-table-wrapper">
+                <table class="log-table" id="users-table">
+                    <thead>
+                        <tr>
+                            <th>User Email</th>
+                            <th>Created At</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- LEADS LOG -->
+        <section class="card log-section">
+            <div class="log-header">
+                <div>
+                    <h2>Leads</h2>
+                    <p class="subtitle">Last 20 leads created (latest first)</p>
+                </div>
+                <button class="export-btn">Export CSV</button>
+            </div>
+
+            <div class="log-table-wrapper">
+                <table class="log-table" id="leads-table">
+                    <thead>
+                        <tr>
+                            <th>Lead Name</th>
+                            <th>Lead Email</th>
+                            <th>Source</th>
+                            <th>Final Page</th>
+                            <th>Created At</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- LEAD SUBMISSIONS LOG -->
+        <section class="card log-section">
+            <div class="log-header">
+                <div>
+                    <h2>Lead Submissions</h2>
+                    <p class="subtitle">Last 20 lead submission attempts (latest first)</p>
+                </div>
+                <button class="export-btn">Export CSV</button>
+            </div>
+
+            <div class="log-table-wrapper">
+                <table class="log-table" id="submissions-table">
+                    <thead>
+                        <tr>
+                            <th>User Email</th>
+                            <th>Lead Name</th>
+                            <th>Lead Email</th>
+                            <th>Source</th>
+                            <th>Final Page</th>
+                            <th>Outcome</th>
+                            <th>Failure Reason</th>
+                            <th>Created At</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Area -->
+    <footer class="app-footer">
+        <span>
+            Built by Harsh Jha ·
+            <a href="https://github.com/Harsh999000/Lead-Submission-Observability-Lab" target="_blank">
+            GitHub
+            </a>
+            ·
+            <a href="mailto:jhaharsh101@gmail.com">
+            Contact: jhaharsh101@gmail.com
+            </a>
+        </span>
+    </footer>
+
+</body>
+</html>

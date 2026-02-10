@@ -1,0 +1,142 @@
+/* ---------- Dashboard Page Styles ---------- */
+
+.dashboard {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem 1.5rem;
+}
+
+/* ---------- Dashboard Header ---------- */
+
+.dashboard-header {
+    margin-bottom: 2rem;
+}
+
+.dashboard-header h1 {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+}
+
+.dashboard-header .subtitle {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+/* ---------- Metrics Section ---------- */
+
+.metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.metric-card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 1.25rem;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.metric-card h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #555;
+}
+
+.metric-value {
+    margin-top: 0.5rem;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #222;
+}
+
+.metric-label {
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* ---------- Analytics Sections ---------- */
+
+.analytics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.25rem;
+}
+
+.analytics-box {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 1.25rem;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.analytics-box h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.placeholder {
+    font-size: 0.85rem;
+    color: #777;
+    line-height: 1.4;
+}
+
+/* ---------- Analysis Loading State ---------- */
+
+.analysis-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.25rem;
+    text-align: center;
+}
+
+.analysis-hint {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.spinner {
+    width: 28px;
+    height: 28px;
+    border: 3px solid #ddd;
+    border-top: 3px solid #333;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-bottom: 0.75rem;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ---------- Chart ---------- */
+
+.analytics-box canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.analytics-box:has(canvas) {
+    height: 320px;
+    max-height: 320px;
+}
+
+/* ---------- Responsive Tweaks ---------- */
+
+@media (min-width: 768px) {
+    .dashboard-header h1 {
+        font-size: 1.7rem;
+    }
+
+    .analytics-box:has(canvas) {
+        height: 360px;
+        max-height: 360px;
+    }
+}

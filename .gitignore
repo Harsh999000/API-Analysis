@@ -1,0 +1,17 @@
+# Maven
+target/
+
+# IDEs
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+
+# Environment / secrets
+.env
+application-local.properties
+application-prod.properties
+
+# Local Spring Boot config (machine-specific)
+src/main/resources/application-local.properties

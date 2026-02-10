@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead Submission Form</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/app.js" defer></script>
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <header class="top-nav">
+        <div class="nav-left">
+            <a href="/index.html" class="project-title">
+                Lead Submission Analysis
+            </a>
+        </div>
+        <nav class="nav-right">
+            <a href="/index.html">Home</a>
+            <a href="/dashboard.html">Dashboard</a>
+            <a href="/logs.html">Logs</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="form-card">
+            <h1>Lead Submission</h1>
+            <p class="subtitle">
+                Please visit <a href="/dashboard.html">Dashboard</a> to view AI-generated insights from submitted <a href="/logs.html">Logs</a>.<br>
+            </p>
+
+            <!-- New User Registration Link -->
+            <div class="new-user-link">
+                You may <a href="/register.html"> Create </a> a user or use the credentials below to submit leads and track them in the <a href="/logs.html">Logs</a> and <a href="/dashboard.html">Dashboard</a> metrics.<br>
+                Email: common_user@gmail.com<br>
+                Password: common_user<br><br>                 
+                Analysis on prsented by Analyze button on dashboard is powered by Ollama (LLaMA 3.1 - 8B).
+            </div>
+
+            <form id="leadForm">
+
+                <!-- Authentication -->
+                <fieldset>
+                    <legend>User Authentication</legend>
+
+                    <label>
+                        User Email
+                        <input type="email" id="userEmail" required placeholder="user@company.com">
+                    </label>
+
+                    <label>
+                        Password
+                        <input type="password" id="userPassword" required>
+                    </label>
+                </fieldset>
+
+                <!-- Lead Details -->
+                <fieldset>
+                    <legend>Lead Details</legend>
+
+                    <label>
+                        Lead Name
+                        <input type="text" id="leadName" required placeholder="John Doe">
+                    </label>
+
+                    <label>
+                        Lead Email
+                        <input type="email" id="leadEmail" required placeholder="john@example.com">
+                    </label>
+
+                    <label>
+                        Source
+                        <select id="source" required>
+                            <option value="">Select source</option>
+                            <option value="WEBSITE_FORM">Website Form</option>
+                            <option value="FUNNEL_PAGE">Funnel Page</option>
+                            <option value="QUIZ">Quiz</option>
+                            <option value="QR_CODE">QR Code</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        Final Page
+                        <input type="text" id="finalPage" placeholder="/checkout">
+                    </label>
+                </fieldset>
+
+                <button type="submit">Submit Lead</button>
+
+                <!-- Response Area -->
+                <div id="responseBox" class="response hidden"></div>
+
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer Area -->
+    <footer class="app-footer">
+        <span>
+            Built by Harsh Jha ·
+            <a href="https://github.com/Harsh999000/Lead-Submission-Observability-Lab" target="_blank">
+            GitHub
+            </a>
+            ·
+            <a href="mailto:jhaharsh101@gmail.com">
+            Contact: jhaharsh101@gmail.com
+            </a>
+        </span>
+    </footer>
+
+</body>
+</html>

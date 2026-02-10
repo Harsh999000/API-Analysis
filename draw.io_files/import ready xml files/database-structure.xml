@@ -1,0 +1,59 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.3.0 Chrome/140.0.7339.249 Electron/38.7.2 Safari/537.36" version="29.3.0">
+  <diagram id="db-structure" name="Database Structure">
+    <mxGraphModel dx="1500" dy="660" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="qXhfqj9XhZrxgwI9IlAk-1" edge="1" parent="1" source="users" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="logs" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qXhfqj9XhZrxgwI9IlAk-6" edge="1" parent="1" source="users" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="events" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="users" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=#6c8ebf;fillStyle=solid;" value="users&lt;br&gt;────────────&lt;br&gt;id (PK)&lt;br&gt;email&lt;div&gt;password&lt;br&gt;created_at&lt;/div&gt;" vertex="1">
+          <mxGeometry height="160" width="240" x="90" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="qXhfqj9XhZrxgwI9IlAk-9" edge="1" parent="1" source="leads" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="analytics">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1040" y="350" />
+              <mxPoint x="830" y="350" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leads" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=#82b366;" value="leads&lt;br&gt;────────────&lt;br&gt;id (PK)&lt;br&gt;leas_name&lt;div&gt;lead_email&lt;br&gt;source&lt;br&gt;final_page&lt;br&gt;submitted_by_user_id&lt;br&gt;created_at&lt;/div&gt;" vertex="1">
+          <mxGeometry height="200" width="280" x="900" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qXhfqj9XhZrxgwI9IlAk-2" edge="1" parent="1" source="logs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="leads" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="logs" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=#d6b656;" value="lead_submission_logs&lt;br&gt;────────────&lt;br&gt;id (PK)&lt;br&gt;user_id&lt;br&gt;user_email&lt;div&gt;lead_name&lt;/div&gt;&lt;div&gt;lead_email&lt;br&gt;source&lt;/div&gt;&lt;div&gt;final_page&lt;/div&gt;&lt;div&gt;outcome (failed/success)&lt;/div&gt;&lt;div&gt;failure_reason&lt;br&gt;created_at&lt;/div&gt;" vertex="1">
+          <mxGeometry height="220" width="300" x="470" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="events" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=#b85450;" value="user_rate_limit&lt;div&gt;────────────&lt;br&gt;user_id (PK)&lt;br&gt;rate_limit&lt;br&gt;window_seconds&lt;br&gt;current count&lt;br&gt;success_count&lt;br&gt;failure_count&lt;br&gt;total_count&lt;br&gt;updated_at&lt;/div&gt;" vertex="1">
+          <mxGeometry height="200" width="300" x="60" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="analytics" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=#9673a6;" value="daily_analytics_reports&lt;br&gt;────────────&lt;br&gt;id (PK)&lt;br&gt;day&lt;br&gt;generated_at&lt;br&gt;executive_summary&lt;div&gt;behaviour_analysis&lt;br&gt;system_behaviour_analysis&lt;/div&gt;&lt;div&gt;misconfiguration_signals&lt;/div&gt;&lt;div&gt;analysis_confidence&lt;/div&gt;&lt;div&gt;analysis_scope_note&lt;/div&gt;" vertex="1">
+          <mxGeometry height="200" width="300" x="680" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="qXhfqj9XhZrxgwI9IlAk-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Lead Submit API&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="100" x="350" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="qXhfqj9XhZrxgwI9IlAk-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="If Lead Submit API returns success" vertex="1">
+          <mxGeometry height="30" width="120" x="770" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="qXhfqj9XhZrxgwI9IlAk-8" edge="1" parent="1" source="logs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.472;entryY=0.006;entryDx=0;entryDy=0;entryPerimeter=0;" target="analytics">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="620" y="350" />
+              <mxPoint x="822" y="350" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qXhfqj9XhZrxgwI9IlAk-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="AI Analysis Call (Prompt data from above 2 databases) - Stores both success/failure" vertex="1">
+          <mxGeometry height="30" width="415" x="622.5" y="310" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

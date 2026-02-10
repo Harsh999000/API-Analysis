@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard · Lead Troubleshooting Lab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- shared app styles -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- dashboard page styles (content only) -->
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <script src="/js/dashboard.js" defer></script>
+
+    <!-- Chart.js (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Including this to track visit logs included in app.js-->
+    <script src="/js/app.js" defer></script>
+</head>
+<body>
+
+<!-- ---------- Top Navigation ---------- -->
+<div class="top-nav">
+    <div class="project-title">
+        <a href="/index.html" style="color: inherit;">
+            Lead Submission Analysis
+        </a>
+    </div>
+
+    <div class="nav-right">
+        <a href="/index.html">Home</a>
+        <a href="/dashboard.html">Dashboard</a>
+        <a href="/logs.html">Logs</a>
+    </div>
+</div>
+
+<!-- ---------- Dashboard Content ---------- -->
+<main class="dashboard">
+
+    <header class="dashboard-header">
+        <h1>Dashboard</h1>
+        <p class="subtitle">
+            You can click on Analyze button below these metrics to generate AI Based Summary derived from lead submission logs<br><br>
+            Using Ollama with the LLaMA 3.1 model — specifically the 8B parameter variant.
+        </p>
+    </header>
+
+    <!-- =====================
+         OVERALL METRICS
+    ===================== -->
+    <section class="metrics">
+        <div class="metric-card">
+            <h3>Total Users</h3>
+            <div class="metric-value">—</div>
+            <div class="metric-label">Registered users (all time)</div>
+        </div>
+
+        <div class="metric-card">
+            <h3>Total Leads</h3>
+            <div class="metric-value">—</div>
+            <div class="metric-label">Successful submissions (all time)</div>
+        </div>
+
+        <div class="metric-card">
+            <h3>Submission Attempts</h3>
+            <div class="metric-value">—</div>
+            <div class="metric-label">All attempts (all time)</div>
+        </div>
+
+        <div class="metric-card">
+            <h3>Success Count</h3>
+            <div class="metric-value">—</div>
+            <div class="metric-label">Successful attempts (all time)</div>
+        </div>
+
+        <div class="metric-card">
+            <h3>Success Rate</h3>
+            <div class="metric-value">—</div>
+            <div class="metric-label">Success / attempts (all time)</div>
+        </div>
+    </section>
+
+    <!-- =====================
+         TODAY METRICS
+    ===================== -->
+    <section class="metrics">
+        <div class="metric-card">
+            <h3>Total Leads — Today</h3>
+            <div class="metric-value">—</div>
+            <div class="metric-label">Successful submissions today</div>
+        </div>
+
+        <div class="metric-card">
+            <h3>Submission Attempts — Today</h3>
+            <div class="metric-value">—</div>
+            <div class="metric-label">All attempts today</div>
+        </div>
+
+        <div class="metric-card">
+            <h3>Success Count — Today</h3>
+            <div class="metric-value">—</div>
+            <div class="metric-label">Successful attempts today</div>
+        </div>
+
+        <div class="metric-card">
+            <h3>Success Rate — Today</h3>
+            <div class="metric-value">—</div>
+            <div class="metric-label">Success / attempts today</div>
+        </div>
+    </section>
+
+    <!-- =====================
+         DATE-WISE ANALYSIS
+    ===================== -->
+    <section class="analytics">
+
+        <!-- Date-wise Activity -->
+        <div class="analytics-box">
+            <h2>Date-wise Activity</h2>
+
+            <div class="analysis-controls">
+                <input type="date" id="analysisDate" autocomplete="off">
+                <button id="runAnalysisBtn">Analyze</button>
+            </div>
+
+            <p class="placeholder">
+                Select a date (DD-MMM-YYYY) to view the activity summary for that day.
+            </p>
+
+            <div id="analysisSummary"></div>
+        </div>
+
+        <!-- Top Failure Reasons -->
+        <div class="analytics-box">
+            <h2>Top Failure Reasons</h2>
+
+            <p class="placeholder">
+                Failure reason analysis for the selected date.
+            </p>
+
+            <div id="analysisFailures"></div>
+        </div>
+
+        <!-- Source Breakdown -->
+        <div class="analytics-box">
+            <h2>Source Breakdown</h2>
+
+            <p class="placeholder">
+                Source distribution for the selected date.
+            </p>
+
+            <div id="analysisSources"></div>
+        </div>
+
+    </section>
+
+    <!-- =====================
+         DAILY TRENDS GRAPH
+    ===================== -->
+    <section class="analytics">
+        <div class="analytics-box" style="grid-column: 1 / -1;">
+            <h2>Daily Submission Trends (Last 7 Days)</h2>
+
+            <p class="placeholder">
+                Comparison of successful vs failed lead submissions over the past 7 days.
+            </p>
+
+            <canvas id="dailyTrendChart" height="120"></canvas>
+        </div>
+    </section>
+
+</main>
+
+    <!-- Footer Area -->
+    <footer class="app-footer">
+        <span>
+            Built by Harsh Jha ·
+            <a href="https://github.com/Harsh999000/Lead-Submission-Observability-Lab" target="_blank">
+            GitHub
+            </a>
+            ·
+            <a href="mailto:jhaharsh101@gmail.com">
+            Contact: jhaharsh101@gmail.com
+            </a>
+        </span>
+    </footer>
+
+</body>
+</html>

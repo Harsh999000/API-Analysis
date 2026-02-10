@@ -1,0 +1,112 @@
+/* ---------- Logs Page Styles ---------- */
+
+/* Section spacing */
+.log-section {
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+/* Allow logs cards to expand on wide screens */
+.log-section.card {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Section header */
+.log-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.log-header h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+}
+
+/* Export button */
+.export-btn {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background-color: #f4f6f8;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.export-btn:hover {
+    background-color: #e9ecef;
+}
+
+/* ---------- Scroll Container ---------- */
+
+.log-table-wrapper {
+    max-height: 260px; /* ~5 rows */
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+/* ---------- Table Styling ---------- */
+
+.log-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+/* Header */
+.log-table thead {
+    background-color: #f4f6f8;
+}
+
+.log-table th {
+    text-align: left;
+    font-weight: 600;
+    padding: 0.6rem 0.75rem;
+    border-bottom: 1px solid #ddd;
+
+    /* keep headers readable */
+    white-space: nowrap;
+}
+
+/* Body cells */
+.log-table td {
+    padding: 0.55rem 0.75rem;
+    border-bottom: 1px solid #eee;
+
+    /* Wrap text inside cells */
+    white-space: normal;
+    word-break: break-word;
+    vertical-align: top;
+}
+
+/* Hover */
+.log-table tbody tr:hover {
+    background-color: #fafafa;
+}
+
+/* Empty state */
+.log-table tbody:empty::after {
+    content: "No data available";
+    display: block;
+    padding: 1rem;
+    color: #777;
+    font-style: italic;
+}
+
+/* Improve readability on larger screens */
+@media (min-width: 768px) {
+    .log-table {
+        font-size: 0.9rem;
+    }
+
+    .log-header h2 {
+        font-size: 1.3rem;
+    }
+}
+
+/* ---------- End Logs Page Styles ---------- */

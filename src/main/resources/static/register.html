@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/register.js" defer></script>
+    <!-- Including this to track visit logs included in app.js-->
+    <script src="/js/app.js" defer></script>
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <header class="top-nav">
+        <div class="nav-left">
+            <a href="/index.html" class="project-title">Lead Submission Analysis</a>
+        </div>
+        <nav class="nav-right">
+            <a href="/index.html">Home</a>
+            <a href="/dashboard.html">Dashboard</a>
+            <a href="/logs.html">Logs</a>
+        </nav>
+    </header>
+
+    <div class="page-container">
+
+        <h1>User Registration</h1>
+
+        <p class="subtitle">
+            Please visit <a href="/dashboard.html">Dashboard</a> to check AI based summary derived from lead submission<br> logs<br>
+            Using Ollama with the LLaMA 3.1 model — specifically the 8B parameter variant.<br><br>
+            Create a user id and password to try lead submission.
+        </p>
+
+        <form id="registerForm" class="card">
+
+            <label>Email</label>
+            <input type="email" id="email" required>
+
+            <label>Password</label>
+            <input type="password" id="password" required>
+
+            <button type="submit">Create User</button>
+
+            <!-- Response box -->
+            <div id="responseBox" class="response hidden"></div>
+        </form>
+
+        <div class="back-link">
+            <a href="/index.html">← Back to Lead Submission</a>
+        </div>
+
+    </div>
+
+    <!-- Footer Area -->
+    <footer class="app-footer">
+        <span>
+            Built by Harsh Jha ·
+            <a href="https://github.com/Harsh999000/Lead-Submission-Observability-Lab" target="_blank">
+            GitHub
+            </a>
+            ·
+            <a href="mailto:jhaharsh101@gmail.com">
+            Contact: jhaharsh101@gmail.com
+            </a>
+        </span>
+    </footer>
+
+</body>
+</html>

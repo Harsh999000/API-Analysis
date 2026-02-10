@@ -1,0 +1,242 @@
+/* ---------- Index Page Start---------- */
+/* Reset & base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+    background-color: #f4f6f8;
+    color: #333;
+    line-height: 1.5;
+    padding-bottom: 50px; /* height of footer + breathing room */
+}
+
+/* ---------- Top Navigation ---------- */
+.top-nav {
+    width: 100%;
+    height: 56px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.project-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.nav-right a {
+    margin-left: 1.25rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #4a90e2;
+}
+
+.nav-right a:hover {
+    text-decoration: underline;
+}
+
+/* Layout */
+.container {
+    min-height: calc(100vh - 56px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.page-container {
+    min-height: calc(100vh - 56px);
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;      
+    justify-content: center;
+}
+
+/* Cards */
+.form-card,
+.card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 520px;
+    padding: 2rem;            
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Headings */
+h1 {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+    text-align: center;     
+}
+
+.subtitle {
+    color: #000000;
+    margin-bottom: 16px;
+    font-size: 0.90rem;
+    text-align: center;
+}
+
+.subtitle a {
+    color: #1976d2;
+    text-decoration: none;
+}
+
+.subtitle a:hover {
+    text-decoration: underline;
+}
+
+/* Form */
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+legend {
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0 0.5rem;
+}
+
+label {
+    display: block;
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.35rem;   
+}
+
+input,
+select {
+    display: block;
+    width: 100%;
+    margin-top: 0;            
+    padding: 0.75rem 0.85rem; 
+    font-size: 1rem;          
+    line-height: 1.4;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #4a90e2;
+}
+
+/* Button */
+button {
+    margin-top: 1.25rem;
+    padding: 0.85rem;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #357abd;
+}
+
+/* Response box (for JS) */
+.response {
+    margin-top: 0.75rem;
+    padding: 0.75rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+.response.hidden {
+    display: none;
+}
+
+/* Desktop enhancement */
+@media (min-width: 768px) {
+    .form-card,
+    .card {
+        padding: 2.25rem;
+    }
+}
+
+/* Links */
+.new-user-link {
+    margin-top: 16px;
+    margin-bottom: 24px;
+    font-size: 0.90rem;
+    text-align: center;
+}
+
+.new-user-link a {
+    color: #1976d2;
+    text-decoration: none;
+}
+
+.new-user-link a:hover {
+    text-decoration: underline;
+}
+
+.back-link {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* ---------- Index & Registration Page End---------- */
+
+
+/* ---------- Footer Start ---------- */
+
+.app-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  background: #ffffff;
+  border-top: 1px solid #e0e0e0;
+
+  padding: 8px 16px;
+  text-align: center;
+
+  font-size: 13px;
+  color: #555;
+
+  z-index: 1000;
+}
+
+.app-footer a {
+  color: #2563eb;
+  text-decoration: none;
+  margin: 0 4px;
+}
+
+.app-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Footer End ---------- */
