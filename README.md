@@ -24,7 +24,7 @@ Please use the link below to try the project or check the live dashboard:
 > The AI and app server is running on my 2 personal laptops, so availability is limited.
 >
 > **Expected downtime:**  
-> **12:30 A.M. – 10:30 A.M.**
+> **12:30 A.M. – 10:30 A.M. IST**
 
 ### Cloudflare Access & Exposure Model
 
@@ -50,7 +50,7 @@ This replaces earlier dynamic `trycloudflare.com` URLs and provides a **stable, 
 > The AI and app server is running on my 2 personal laptops, so availability is limited.
 >
 > **Expected downtime:**  
-> **12:30 A.M. – 10:30 A.M.**
+> **12:30 A.M. – 10:30 A.M. IST**
 
 If you need to access the project during the expected downtime window, or if you want to collaborate on a project, feel free to reach out:
 
