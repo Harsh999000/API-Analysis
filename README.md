@@ -20,6 +20,12 @@ Please use the link below to try the project or check the live dashboard:
 
 **https://apianalysis.harshjha.co.in**
 
+> **Availability Notice**  
+> The AI and app server is running on my 2 personal laptops, so availability is limited.
+>
+> **Expected downtime:**  
+> **12:30 A.M. – 10:30 A.M.**
+
 ### Cloudflare Access & Exposure Model
 
 The application is exposed using **Cloudflare Tunnel (cloudflared)** with a **fixed custom domain**.
@@ -41,10 +47,10 @@ This replaces earlier dynamic `trycloudflare.com` URLs and provides a **stable, 
 - For further information on system parts you can check part specific files in docs
 
 > **Availability Notice**  
-> The server is running on my personal laptop, so availability is limited.
+> The AI and app server is running on my 2 personal laptops, so availability is limited.
 >
 > **Expected downtime:**  
-> **12:30 A.M. – 8:00 A.M.**
+> **12:30 A.M. – 10:30 A.M.**
 
 If you need to access the project during the expected downtime window, or if you want to collaborate on a project, feel free to reach out:
 
