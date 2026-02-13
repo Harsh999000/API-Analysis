@@ -24,7 +24,7 @@ submit_lead () {
   PAYLOAD=$(cat <<EOF
 {
   "name": "Lead Demo $DATE_TAG $X",
-  "email": "lead_demo_${DATE_TAG}_${X}@demo.com",
+  "email": "lead_demo_${DATE_TAG}_${USER_EMAIL//[@.]/}_${X}@demo.com",
   "source": "WEBSITE_FORM",
   "finalPage": "/pricing"
 }
@@ -49,19 +49,23 @@ run_user_flow () {
 
   log "START user flow: $USER_EMAIL"
 
-  # 1️⃣ Unique submissions
-  for x in $(seq 1 20); do
+  # 🔹 Unique submissions: 40–60 (independent per user)
+  SUCCESS_COUNT=$((RANDOM % 21 + 40))
+  log "$USER_EMAIL will submit $SUCCESS_COUNT unique leads"
+
+  for x in $(seq 1 "$SUCCESS_COUNT"); do
     submit_lead "$USER_EMAIL" "$USER_PASSWORD" "$x"
-    sleep 8
+    sleep $((RANDOM % 4 + 6))   # 6–9 sec spacing (less robotic)
   done
 
-  # 2️⃣ Duplicate submissions
-  DUP_COUNT=$((RANDOM % 5 + 1))
+  # 🔹 Duplicate submissions: 5–10
+  DUP_COUNT=$((RANDOM % 6 + 5))
   log "$USER_EMAIL submitting $DUP_COUNT duplicate leads"
 
   for x in $(seq 1 "$DUP_COUNT"); do
-    submit_lead "$USER_EMAIL" "$USER_PASSWORD" "$x"
-    sleep 8
+    RAND_DUP=$((RANDOM % SUCCESS_COUNT + 1))
+    submit_lead "$USER_EMAIL" "$USER_PASSWORD" "$RAND_DUP"
+    sleep $((RANDOM % 4 + 6))
   done
 
   log "END user flow: $USER_EMAIL"
@@ -71,12 +75,13 @@ rate_limit_blast () {
   local USER_EMAIL=$1
   local USER_PASSWORD=$2
 
-  FAIL_COUNT=$((RANDOM % 5 + 11))
+  # 🔹 11–16 rapid calls (within ~1 min)
+  FAIL_COUNT=$((RANDOM % 6 + 11))
   log "RATE LIMIT BLAST for $USER_EMAIL ($FAIL_COUNT calls)"
 
   for i in $(seq 1 "$FAIL_COUNT"); do
     submit_lead "$USER_EMAIL" "$USER_PASSWORD" "RL$i"
-    sleep 1
+    sleep $((RANDOM % 3 + 1))   # 1–3 sec burst
   done
 
   log "END RATE LIMIT BLAST for $USER_EMAIL"
@@ -84,7 +89,7 @@ rate_limit_blast () {
 
 log "================= LEAD LAB RUN START ================="
 
-# Async execution
+# Async execution (users independent)
 run_user_flow "user1@demo.com" "user1" &
 run_user_flow "user2@demo.com" "user2" &
 
