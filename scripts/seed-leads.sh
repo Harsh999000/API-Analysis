@@ -49,8 +49,8 @@ run_user_flow () {
 
   log "START user flow: $USER_EMAIL"
 
-  # 🔹 Unique submissions: 40–60 (independent per user)
-  SUCCESS_COUNT=$((RANDOM % 21 + 40))
+  # 🔹 Unique submissions: 40–80 (independent per user)
+  SUCCESS_COUNT=$((RANDOM % 40 + 40))
   log "$USER_EMAIL will submit $SUCCESS_COUNT unique leads"
 
   for x in $(seq 1 "$SUCCESS_COUNT"); do
@@ -58,8 +58,8 @@ run_user_flow () {
     sleep $((RANDOM % 4 + 6))   # 6–9 sec spacing (less robotic)
   done
 
-  # 🔹 Duplicate submissions: 5–20
-  DUP_COUNT=$((RANDOM % 16 + 4))
+  # 🔹 Duplicate submissions: 10-30
+  DUP_COUNT=$((RANDOM % 30 + 10))
   log "$USER_EMAIL submitting $DUP_COUNT duplicate leads"
 
   for x in $(seq 1 "$DUP_COUNT"); do
@@ -75,8 +75,8 @@ rate_limit_blast () {
   local USER_EMAIL=$1
   local USER_PASSWORD=$2
 
-  # 🔹 10–16 rapid calls (within ~1 min)
-  FAIL_COUNT=$((RANDOM % 6 + 9))
+  # 🔹 5–25 rapid calls (within ~1 min)
+  FAIL_COUNT=$((RANDOM % 20 + 5))
   log "RATE LIMIT BLAST for $USER_EMAIL ($FAIL_COUNT calls)"
 
   for i in $(seq 1 "$FAIL_COUNT"); do
