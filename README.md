@@ -38,7 +38,7 @@ Key characteristics of the setup:
 - All traffic flows through an **outbound-only encrypted tunnel**  
 - TLS termination handled by Cloudflare  
 
-This replaces earlier dynamic `trycloudflare.com` URLs and provides a **stable, production-style access pattern**.
+This provides a **stable, production-style access pattern**.
 
 ---
 
