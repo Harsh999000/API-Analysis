@@ -49,7 +49,11 @@ run_user_flow () {
 
   log "START user flow: $USER_EMAIL"
 
+<<<<<<< HEAD
   # 🔹 Unique submissions: 40–80 (independent per user)
+=======
+  # Unique submissions: 40–80 (independent per user)
+>>>>>>> 999a386 (Updated scripts to adjust to jar service instead of spring-boot:run)
   SUCCESS_COUNT=$((RANDOM % 40 + 40))
   log "$USER_EMAIL will submit $SUCCESS_COUNT unique leads"
 
@@ -58,7 +62,11 @@ run_user_flow () {
     sleep $((RANDOM % 4 + 6))   # 6–9 sec spacing (less robotic)
   done
 
+<<<<<<< HEAD
   # 🔹 Duplicate submissions: 10-30
+=======
+  # Duplicate submissions: 10-30
+>>>>>>> 999a386 (Updated scripts to adjust to jar service instead of spring-boot:run)
   DUP_COUNT=$((RANDOM % 30 + 10))
   log "$USER_EMAIL submitting $DUP_COUNT duplicate leads"
 

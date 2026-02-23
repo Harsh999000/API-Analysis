@@ -1,27 +1,28 @@
 #!/bin/bash
 
-echo "========================================================"
-echo "========================================================"
+PID_FILE="/tmp/lead_lab_app.pid"
 
-SCRIPT_DIR="/web2/Api-Analysis/scripts"
-LOG_DIR="$SCRIPT_DIR/log"
-DATE=$(date +"%Y-%m-%d")
-LOG_FILE="$LOG_DIR/lead-lab-$DATE.log"
+if [ ! -f "$PID_FILE" ]; then
+  echo "Server not running (no PID file)"
+  exit 0
+fi
 
-mkdir -p "$LOG_DIR"
+PID=$(cat "$PID_FILE")
 
-echo "===========================================" | tee -a "$LOG_FILE"
-echo "STOP ALL SERVICES - $(date)" | tee -a "$LOG_FILE"
-echo "===========================================" | tee -a "$LOG_FILE"
+# Verify this PID belongs to THIS jar
+if ps -p "$PID" -o args= | grep -q "Api-Analysis.jar"; then
+  echo "Stopping server (PID $PID)"
+  kill "$PID"
+  sleep 5
 
-echo "Stopping Cloudflare tunnel..." | tee -a "$LOG_FILE"
-"$SCRIPT_DIR/stop-cloudflare.sh"
+  if ps -p "$PID" > /dev/null 2>&1; then
+    echo "Force killing (PID $PID)"
+    kill -9 "$PID"
+  fi
 
-sleep 5
+  echo "Server stopped"
+else
+  echo "PID does not belong to this project. Not touching."
+fi
 
-echo "Stopping server..." | tee -a "$LOG_FILE"
-"$SCRIPT_DIR/stop-server.sh"
-
-echo "All services stopped." | tee -a "$LOG_FILE"
-echo "==========================================================="
-echo "==========================================================="
+rm -f "$PID_FILE"
