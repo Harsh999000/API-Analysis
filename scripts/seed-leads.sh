@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# ---------------------------------------------------
+# ENV (cron-safe)
+# ---------------------------------------------------
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
 BASE_DIR="$(cd "$(dirname "$0")" && pwd)"
 LOG_DIR="$BASE_DIR/log"
 
@@ -17,6 +22,7 @@ submit_lead () {
   local USER_EMAIL=$1
   local USER_PASSWORD=$2
   local X=$3
+
   local REQUEST_ID
   REQUEST_ID=$(uuidgen 2>/dev/null || echo "$RANDOM-$X")
 
@@ -31,14 +37,19 @@ submit_lead () {
 EOF
 )
 
-  log "REQ_ID=$REQUEST_ID USER=$USER_EMAIL LEAD_X=$X PAYLOAD=$PAYLOAD"
+  log "REQ_ID=$REQUEST_ID USER=$USER_EMAIL LEAD_X=$X"
 
-  RESPONSE=$(curl -s -w "\nHTTP_STATUS:%{http_code}\n" \
+  RESPONSE=$(curl --max-time 30 -s -w "\nHTTP_STATUS:%{http_code}\n" \
     -X POST "$API_URL" \
     -H "Content-Type: application/json" \
     -H "X-User-Email: $USER_EMAIL" \
     -H "X-User-Password: $USER_PASSWORD" \
     -d "$PAYLOAD")
+
+  if [ $? -ne 0 ]; then
+    log "REQ_ID=$REQUEST_ID ERROR: curl failed"
+    return
+  fi
 
   log "REQ_ID=$REQUEST_ID RESPONSE=$RESPONSE"
 }
@@ -49,24 +60,16 @@ run_user_flow () {
 
   log "START user flow: $USER_EMAIL"
 
-<<<<<<< HEAD
-  # 🔹 Unique submissions: 40–80 (independent per user)
-=======
-  # Unique submissions: 40–80 (independent per user)
->>>>>>> 999a386 (Updated scripts to adjust to jar service instead of spring-boot:run)
+  # Unique submissions: 40–80
   SUCCESS_COUNT=$((RANDOM % 40 + 40))
   log "$USER_EMAIL will submit $SUCCESS_COUNT unique leads"
 
   for x in $(seq 1 "$SUCCESS_COUNT"); do
     submit_lead "$USER_EMAIL" "$USER_PASSWORD" "$x"
-    sleep $((RANDOM % 4 + 6))   # 6–9 sec spacing (less robotic)
+    sleep $((RANDOM % 4 + 6))
   done
 
-<<<<<<< HEAD
-  # 🔹 Duplicate submissions: 10-30
-=======
-  # Duplicate submissions: 10-30
->>>>>>> 999a386 (Updated scripts to adjust to jar service instead of spring-boot:run)
+  # Duplicate submissions: 10–30
   DUP_COUNT=$((RANDOM % 30 + 10))
   log "$USER_EMAIL submitting $DUP_COUNT duplicate leads"
 
@@ -83,13 +86,12 @@ rate_limit_blast () {
   local USER_EMAIL=$1
   local USER_PASSWORD=$2
 
-  # 🔹 5–25 rapid calls (within ~1 min)
   FAIL_COUNT=$((RANDOM % 20 + 5))
   log "RATE LIMIT BLAST for $USER_EMAIL ($FAIL_COUNT calls)"
 
   for i in $(seq 1 "$FAIL_COUNT"); do
     submit_lead "$USER_EMAIL" "$USER_PASSWORD" "RL$i"
-    sleep $((RANDOM % 3 + 1))   # 1–3 sec burst
+    sleep $((RANDOM % 3 + 1))
   done
 
   log "END RATE LIMIT BLAST for $USER_EMAIL"
@@ -97,13 +99,13 @@ rate_limit_blast () {
 
 log "================= LEAD LAB RUN START ================="
 
-# Async execution (users independent)
+# Parallel user execution
 run_user_flow "user1@demo.com" "user1" &
 run_user_flow "user2@demo.com" "user2" &
 
 wait
 
-# Intentional failure storm
+# Intentional burst after normal flow
 rate_limit_blast "user1@demo.com" "user1"
 
 log "================= LEAD LAB RUN END ==================="
