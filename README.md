@@ -21,7 +21,6 @@ Please use the link below to try the project or check the live dashboard:
 **https://apianalysis.harshjha.co.in**
 
 > **Availability Notice**
-> **Currently down from 8:40 P.M to 9:20 P.M on 23-02-2026**
 > The AI and app server is running on my 2 personal laptops, so availability is limited.
 >
 > **Expected downtime:**  
