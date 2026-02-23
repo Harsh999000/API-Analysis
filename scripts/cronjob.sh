@@ -10,11 +10,11 @@ set -euo pipefail
 SCRIPT_NAME="$(basename "$0")"
 BASE="/web2/Api-Analysis"
 SCRIPT_DIR="$BASE/scripts"
-CRONLOG_DIR="$BASE/logs"
+LOG_DIR="$BASE/logs"
 LOG_DATE="$(date +%F)"
-CRONLOG_FILE="$CRONLOG_DIR/cron-$LOG_DATE.log"
+CRONLOG_FILE="$LOG_DIR/cron-$LOG_DATE.log"
 
-mkdir -p "$CRONLOG_DIR"
+mkdir -p "$LOG_DIR"
 
 log() {
   {
@@ -35,7 +35,7 @@ log "Lead seeding completed"
 # --------------------------------------------------
 # 2. Delete Old Logs (Retention: 7 days)
 # --------------------------------------------------
-"$SCRIPT_DIR/delete-old-logs.sh" &&
+"$SCRIPT_DIR/delete-logs.sh" &&
 log "Log cleanup completed"
 
 log "Lead Lab lifecycle completed successfully"

@@ -1,11 +1,6 @@
 #!/bin/bash
 set -euo pipefail
 
-# ==================================================
-# Lead Lab Log Cleanup Script
-# Deletes logs older than 7 days
-# ==================================================
-
 SCRIPT_NAME="$(basename "$0")"
 BASE="/web2/Api-Analysis"
 LOG_DIR="$BASE/logs"
@@ -16,7 +11,7 @@ mkdir -p "$LOG_DIR"
 
 log() {
   {
-    echo "=================================================="
+    echo "--------------------------------------------------"
     echo "[ $(date '+%Y-%m-%d %H:%M:%S') ] [$SCRIPT_NAME]"
     echo "$@"
   } >> "$CRONLOG_FILE"
@@ -24,7 +19,6 @@ log() {
 
 log "Starting log cleanup (retention: 7 days)"
 
-# Delete files older than 7 days
 find "$LOG_DIR" -type f -mtime +7 -print -delete >> "$CRONLOG_FILE" 2>&1
 
 log "Log cleanup completed successfully"
