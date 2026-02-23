@@ -45,10 +45,10 @@ fi
 echo "Starting JAR: $LATEST_JAR" | tee -a "$LOG_FILE"
 
 # ---------------------------------------------------
-# STEP 3: Start application
+# STEP 3: Start application (Heap Optimized)
 # ---------------------------------------------------
 
-nohup java -Xms128m -Xmx384m -XX:+UseG1GC \
+nohup java -Xms128m -Xmx256m -XX:+UseG1GC \
   -jar "$LATEST_JAR" \
   --spring.profiles.active="$PROFILE" \
   >> "$LOG_FILE" 2>&1 &
@@ -66,4 +66,3 @@ else
   rm -f "$PID_FILE"
   exit 1
 fi
-
