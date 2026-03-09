@@ -8,7 +8,7 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 BASE_DIR="$(cd "$(dirname "$0")" && pwd)"
 LOG_DIR="$BASE_DIR/log"
 
-API_URL="http://192.168.0.183:8110/api/leads"
+API_URL="http://192.168.0.182:8110/api/leads"
 DATE_TAG=$(date +"%Y%m%d")
 LOG_FILE="$LOG_DIR/lead-lab-$(date +"%Y-%m-%d").log"
 
