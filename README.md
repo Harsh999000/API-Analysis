@@ -19,6 +19,7 @@ AI summaries are generated using **Ollama with the LLaMA 3.1 model (8B parameter
 Please use the link below to try the project or check the live dashboard:
 
 **https://apianalysis.harshjha.co.in**
+**Currently Down**
 
 > **Availability Notice**
 > The AI and app server is running on my 2 personal laptops, so availability is limited.
